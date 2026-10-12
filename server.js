@@ -17,6 +17,10 @@ app.use(express.json());
 console.log("Email configured:", Boolean(process.env.EMAIL_USER));
 console.log("Password configured:", Boolean(process.env.EMAIL_PASS));
 
+app.get("/", (req, res) => {
+  res.send("Email Sender Backend is Running Successfully!");
+});
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
